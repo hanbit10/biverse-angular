@@ -1,0 +1,11 @@
+<div>
+  <!-- keyup.enter is just to click enter -->
+  <input
+    #s
+    type="text"
+    placeholder="Search Bible Verse"
+    (keyup.enter)="search(s.value)"
+    [value]="searchTerm"
+  />
+  <button (click)="search(s.value)">Search</button>
+</div>
