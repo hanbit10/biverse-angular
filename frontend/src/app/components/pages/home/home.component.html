@@ -1,0 +1,46 @@
+<!-- <app-search></app-search>
+<app-tags></app-tags>
+<app-not-found [visible]="!verses || !verses.length" resetLinkText="Reset Search">
+</app-not-found> -->
+<ul>
+  <li *ngFor="let verse of verses">
+    <a routerLink="/verse/{{ verse.id }}">
+      <img [src]="verse.imageUrl" [alt]="verse.name" />
+      <div class="content">
+        <div class="name">
+          {{ verse.name }}
+        </div>
+        <span class="favorite {{ verse.favorite ? '' : 'not' }}"> ❤ </span>
+        <div class="stars">
+          <!-- <star-rating
+            [value]="verse.stars"
+            [totalstars]="5"
+            checkedcolor="red"
+            uncheckedcolor="black"
+            size="22px"
+            [readonly]="true"
+          > -->
+          <!-- </star-rating> -->
+        </div>
+        <div class="product-item-footer">
+          <div class="origins">
+            <span *ngFor="let origin of verse.origins">
+              {{ origin }}
+            </span>
+          </div>
+
+          <div class="cook-time">
+            <span>🕒</span>
+            {{ verse.cookTime }}
+          </div>
+        </div>
+
+        <div class="price">
+          <span>
+            {{ verse.price | currency }}
+          </span>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
