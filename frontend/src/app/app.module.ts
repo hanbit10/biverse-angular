@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { SearchComponent } from './components/partials/search/search.component';
+import { TagComponent } from './components/partials/tag/tag.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, SearchComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, SearchComponent, TagComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

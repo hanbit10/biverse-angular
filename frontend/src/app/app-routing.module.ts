@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   //searchTerm is the parameter
   { path: 'search/:searchTerm', component: HomeComponent },
+  { path: 'tag/:tag', component: HomeComponent },
 ];
 
 @NgModule({

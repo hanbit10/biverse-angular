@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
         this.verses = this.verseService.getAllVersesBySearchTerm(
           params['searchTerm']
         );
+      } else if (params['tag']) {
+        this.verses = this.verseService.getAllVersesByTag(params['tag']);
       } else this.verses = verseService.getAll();
     });
     // this.verses = verseService.getAll();
