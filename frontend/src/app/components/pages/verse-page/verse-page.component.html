@@ -1,4 +1,9 @@
-<div *ngIf="verse" class="container">
+<app-not-found
+  [visible]="!verse.id"
+  notFoundMessage="Verse Not Found"
+  resetLinkText="Back To Homepage"
+></app-not-found>
+<div *ngIf="verse.id" class="container">
   <img [src]="verse.imageUrl" [alt]="verse.name" />
 
   <div class="details">
