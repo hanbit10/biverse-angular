@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Verse } from '../shared/models/Verse';
 import { sample_tags, sample_verse } from 'src/data';
 import { Tag } from '../shared/models/Tag';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class VerseService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   //here the Verse[] is the return array
   getAll(): Verse[] {
