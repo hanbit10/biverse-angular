@@ -23,8 +23,9 @@
         </li>
         <li>
           <a routerLink="/cart-page">
-            Cart <span>3</span>
-            <!-- Cart <span *ngIf="cartQuantity">{{ cartQuantity }}</span> -->
+            <!-- Cart <span>{{ cartQuantity }}</span>  
+            use ngIf so that it only shows if the quantitiy is added-->
+            Cart <span *ngIf="cartQuantity">{{ cartQuantity }}</span>
           </a>
         </li>
       </ul>

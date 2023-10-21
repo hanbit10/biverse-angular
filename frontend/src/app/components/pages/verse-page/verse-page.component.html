@@ -1,0 +1,43 @@
+<div *ngIf="verse" class="container">
+  <img [src]="verse.imageUrl" [alt]="verse.name" />
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{ verse.name }}
+      </span>
+      <span class="favorite {{ verse.favorite ? '' : 'not' }}">❤</span>
+    </div>
+    <div class="rating">
+      <!-- <star-rating [value]="food.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="25px"
+        [readonly]="true">
+      </star-rating> -->
+    </div>
+
+    <div class="origins">
+      <span *ngFor="let origin of verse.origins">
+        {{ origin }}
+      </span>
+    </div>
+
+    <div class="tags">
+      <a *ngFor="let tag of verse.tags" routerLink="/tag/{{ tag }}">
+        {{ tag }}
+      </a>
+    </div>
+
+    <div class="cook-time">
+      <span>
+        Time to cook about <strong>{{ verse.cookTime }}</strong> minutes
+      </span>
+    </div>
+
+    <!-- <div class="price">
+      <span>
+        {{ verse.price | currency }}
+      </span>
+    </div> -->
+
+    <button (click)="addToCart()">Add To Cart</button>
+  </div>
+</div>
