@@ -1,14 +1,19 @@
 import express from "express";
 import cors from "cors";
-import { sample_tags, sample_verse } from "./data";
+import { sample_tags, sample_users, sample_verse } from "./data";
+import jwt from "jsonwebtoken";
 
 const app = express();
 //Cors the local host of front end
+
+// app.use(express.json());
+
 app.use(
   cors({
     credentials: true,
     origin: ["http://localhost:4200"],
-  })
+  }),
+  express.json()
 );
 
 //shows the text in URL: http://localhost:5000/api/verses
@@ -43,6 +48,36 @@ app.get("/api/verses/:verseIDD", (req, res) => {
   res.send(verses);
 });
 
+//after declaring the use express json it allows to post
+app.post("/api/users/login", (req, res) => {
+  // const body = req.body;
+  const { email, password } = req.body;
+  const user = sample_users.find(
+    (user) => user.email === email && user.password === password
+  );
+
+  if (user) {
+    res.send(generateTokenResponse(user));
+  } else {
+    res.status(400).send("User name or password is not valid!");
+  }
+});
+
+const generateTokenResponse = (user: any) => {
+  const token = jwt.sign(
+    {
+      email: user.email,
+      isAdmin: user.isAdmin,
+    },
+    "SomeRandomText",
+    {
+      expiresIn: "30d",
+    }
+  );
+
+  user.token = token;
+  return user;
+};
 //Set the localhost port to 5000
 const port = 5000;
 app.listen(port, () => {

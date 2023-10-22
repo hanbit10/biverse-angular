@@ -13,6 +13,8 @@ import { TitleComponent } from './components/partials/title/title.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +26,14 @@ import { HttpClientModule } from '@angular/common/http';
     CartPageComponent,
     TitleComponent,
     NotFoundComponent,
+    LoginPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
