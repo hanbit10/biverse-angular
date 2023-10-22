@@ -19,8 +19,14 @@ export class VersePageComponent implements OnInit {
     private cartService: CartService,
     private router: Router
   ) {
+    // Dont require
+    // let verseObservable = Observable<Verse[]>
+
     activatedRoute.params.subscribe((params) => {
-      if (params['id']) this.verse = verseService.getVerseByID(params['id']);
+      if (params['id'])
+        verseService.getVerseByID(params['id']).subscribe((serverVerse) => {
+          this.verse = serverVerse;
+        });
     });
   }
 

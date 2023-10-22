@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { VerseService } from 'src/app/services/verse.service';
 import { Verse } from 'src/app/shared/models/Verse';
 
@@ -14,16 +15,22 @@ export class HomeComponent implements OnInit {
     private verseService: VerseService,
     activatedRoute: ActivatedRoute
   ) {
+    let verseObservable: Observable<Verse[]>;
     activatedRoute.params.subscribe((params) => {
       // if searching then only show the searchterm by name
       // else it shows all the terms
       if (params['searchTerm']) {
-        this.verses = this.verseService.getAllVersesBySearchTerm(
+        verseObservable = this.verseService.getAllVersesBySearchTerm(
           params['searchTerm']
         );
       } else if (params['tag']) {
-        this.verses = this.verseService.getAllVersesByTag(params['tag']);
-      } else this.verses = verseService.getAll();
+        verseObservable = this.verseService.getAllVersesByTag(params['tag']);
+      } else verseObservable = verseService.getAll();
+
+      //the variable verseObservable just need to subscribe only once to return the value to this.verses
+      verseObservable.subscribe((serverVerses) => {
+        this.verses = serverVerses;
+      });
     });
     // this.verses = verseService.getAll();
   }

@@ -11,7 +11,9 @@ export class TagComponent implements OnInit {
   tags?: Tag[];
 
   constructor(verseService: VerseService) {
-    this.tags = verseService.getAllTags();
+    verseService.getAllTags().subscribe((serverTags) => {
+      this.tags = serverTags;
+    });
   }
   ngOnInit(): void {}
 }

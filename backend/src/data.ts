@@ -1,3 +1,5 @@
+//These are sample data that backend use and frontend get this data with the http
+
 export const sample_verse: any[] = [
   {
     id: "1",
