@@ -53,9 +53,11 @@ a span {
   position: absolute;
   z-index: 1;
   /* background: whitesmoke; */
+  display: none;
 }
 
 .menu-container:hover .menu {
+  background-color: rgb(20, 20, 20);
   display: block;
 }
 
