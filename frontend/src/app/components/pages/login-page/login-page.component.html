@@ -3,18 +3,41 @@
     <app-title title="Login"></app-title>
 
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
-      <div class="input-container">
+      <input-container label="Email">
         <input
           type="email"
           label="Email"
           placeholder="Email"
           formControlName="email"
         />
-        <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
+        <!-- <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
           <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
           <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
-        </div>
-      </div>
+        </div> -->
+        <input-validation
+          [control]="fc['email']"
+          [showErrorsWhen]="isSubmitted"
+        >
+        </input-validation>
+      </input-container>
+
+      <text-input
+        [control]="fc['email']"
+        [showErrorsWhen]="isSubmitted"
+        type="email"
+        label="Email"
+      ></text-input>
+      <!-- <input
+        type="email"
+        label="Email"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
+        <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
+        <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
+      </div> -->
+
       <div class="input-container">
         <input
           type="password"
@@ -22,11 +45,6 @@
           placeholder="Password"
           formControlName="password"
         />
-        <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
-          <div *ngIf="fc['password'].errors['required']">
-            Should not be empty
-          </div>
-        </div>
       </div>
 
       <div class="button">

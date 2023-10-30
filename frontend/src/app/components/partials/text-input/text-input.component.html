@@ -1,0 +1,9 @@
+<input-container [label]="label">
+  <input [type]="type" [placeholder]="label" [formControl]="formControl" />
+  <!-- <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
+  <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
+  <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
+</div> -->
+  <input-validation [control]="control" [showErrorsWhen]="showErrorsWhen">
+  </input-validation>
+</input-container>

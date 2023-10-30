@@ -12,6 +12,7 @@ export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
   isSubmitted = false;
   returnUrl = '';
+
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
