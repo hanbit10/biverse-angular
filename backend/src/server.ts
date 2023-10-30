@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 const app = express();
 //Cors the local host of front end
 
-// app.use(express.json());
+app.use(express.json());
 
 app.use(
   cors({

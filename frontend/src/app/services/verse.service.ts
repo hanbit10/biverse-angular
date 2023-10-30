@@ -10,7 +10,7 @@ import {
   VERSES_TAGS_URL,
   VERSES_URL,
   VERSE_BY_ID_URL,
-} from '../shared/models/constants/urls';
+} from '../shared/constants/urls';
 
 @Injectable({
   providedIn: 'root',

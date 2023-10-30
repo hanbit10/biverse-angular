@@ -3,22 +3,18 @@
     <a routerLink="/" class="logo">Biverse Logo</a>
     <nav>
       <ul>
-        <li>
+        <!-- <li>
           <a routerLink="/upload">Upload</a>
-        </li>
-        <!-- <li *ngIf="!isAuth"> -->
-        <li>
+        </li> -->
+        <li *ngIf="!isAuth">
           <a routerLink="/login-page">Login</a>
         </li>
-        <li>
-          <!-- <li *ngIf="isAuth" class="menu-container"> -->
-          <!-- <a>{{ user.name }}</a> -->
+        <li *ngIf="isAuth" class="menu-container">
           <div class="menu">
-            <a routerLink="/dashboard">Hanbit</a>
+            <a routerLink="/dashboard">{{ user.name }}</a>
             <a routerLink="/profile">Profile</a>
             <a routerLink="/orders">Orders</a>
-            <!-- <a routerLink="/" (click)="logout()">Logout</a> -->
-            <a routerLink="/">Logout</a>
+            <a routerLink="/" (click)="logout()">Logout</a>
           </div>
         </li>
         <li>
