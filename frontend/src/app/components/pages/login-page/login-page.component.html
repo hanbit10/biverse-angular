@@ -3,24 +3,6 @@
     <app-title title="Login"></app-title>
 
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
-      <input-container label="Email">
-        <input
-          type="email"
-          label="Email"
-          placeholder="Email"
-          formControlName="email"
-        />
-        <!-- <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
-          <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
-          <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
-        </div> -->
-        <input-validation
-          [control]="fc['email']"
-          [showErrorsWhen]="isSubmitted"
-        >
-        </input-validation>
-      </input-container>
-
       <text-input
         [control]="fc['email']"
         [showErrorsWhen]="isSubmitted"
@@ -38,20 +20,19 @@
         <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
       </div> -->
 
-      <div class="input-container">
-        <input
-          type="password"
-          label="Password"
-          placeholder="Password"
-          formControlName="password"
-        />
-      </div>
+      <text-input
+        [control]="fc['password']"
+        [showErrorsWhen]="isSubmitted"
+        type="password"
+        label="Password"
+      ></text-input>
 
-      <div class="button">
+      <!-- <div class="button">
         <button type="submit">Login</button>
       </div>
-      <button text="Login"></button>
+      <button text="Login"></button> -->
 
+      <default-button text="Login"></default-button>
       <div class="register">
         New user? &nbsp;
         <!-- <a routerLink="/register" [queryParams]="{ returnUrl: returnUrl }">
