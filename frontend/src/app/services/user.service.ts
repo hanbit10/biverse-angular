@@ -42,6 +42,12 @@ export class UserService {
     );
   }
 
+  logout() {
+    this.userSubject.next(new User());
+    localStorage.removeItem(USER_KEY);
+    window.location.reload();
+  }
+
   register(userRegiser: IUserRegister): Observable<User> {
     return this.http.post<User>(USER_REGISTER_URL, userRegiser).pipe(
       tap({
@@ -49,7 +55,7 @@ export class UserService {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
-            `Welcome to the Foodmine ${user.name}`,
+            `Welcome to the Biverse ${user.name}`,
             'Register Successful'
           );
         },
@@ -58,14 +64,6 @@ export class UserService {
         },
       })
     );
-  }
-
-
-
-  logout() {
-    this.userSubject.next(new User());
-    localStorage.removeItem(USER_KEY);
-    window.location.reload();
   }
 
   private setUserToLocalStorage(user: User) {
@@ -77,6 +75,4 @@ export class UserService {
     if (userJson) return JSON.parse(userJson) as User;
     return new User();
   }
-
-  register(userRegister: )
 }

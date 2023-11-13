@@ -4,6 +4,5 @@ export class User {
   name!: string;
   address!: string;
   token!: string;
-  age!: number;
   isAdmin!: boolean;
 }
