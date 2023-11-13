@@ -60,6 +60,8 @@ export class UserService {
     );
   }
 
+
+
   logout() {
     this.userSubject.next(new User());
     localStorage.removeItem(USER_KEY);
@@ -75,4 +77,6 @@ export class UserService {
     if (userJson) return JSON.parse(userJson) as User;
     return new User();
   }
+
+  register(userRegister: )
 }

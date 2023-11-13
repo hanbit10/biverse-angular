@@ -14,7 +14,7 @@ export const sample_verse: Verse[] = [
     tags: ['FastFood', 'Pizza', 'Lunch'],
   },
   {
-    id: '2',
+    id: '1',
     name: 'Netherlands',
     price: 20,
     cookTime: '20-30',
@@ -25,7 +25,7 @@ export const sample_verse: Verse[] = [
     tags: ['SlowFood', 'Lunch'],
   },
   {
-    id: '3',
+    id: '1',
     name: 'Hanbit',
     price: 5,
     cookTime: '10-15',
@@ -36,7 +36,7 @@ export const sample_verse: Verse[] = [
     tags: ['FastFood', 'Hamburger'],
   },
   {
-    id: '4',
+    id: '1',
     name: 'Hansam',
     price: 2,
     cookTime: '15-20',
@@ -47,7 +47,7 @@ export const sample_verse: Verse[] = [
     tags: ['FastFood', 'Fry'],
   },
   {
-    id: '5',
+    id: '1',
     name: 'JangGeungYong',
     price: 11,
     cookTime: '40-50',
@@ -58,7 +58,7 @@ export const sample_verse: Verse[] = [
     tags: ['SlowFood', 'Soup'],
   },
   {
-    id: '6',
+    id: '1',
     name: 'Hansam',
     price: 9,
     cookTime: '40-50',

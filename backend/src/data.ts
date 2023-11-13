@@ -2,7 +2,6 @@
 
 export const sample_verse: any[] = [
   {
-    id: "1",
     name: "Flower",
     cookTime: "10-20",
     price: 10,
@@ -13,7 +12,6 @@ export const sample_verse: any[] = [
     tags: ["FastFood", "Pizza", "Lunch"],
   },
   {
-    id: "2",
     name: "Netherlands",
     price: 20,
     cookTime: "20-30",
@@ -24,7 +22,6 @@ export const sample_verse: any[] = [
     tags: ["SlowFood", "Lunch"],
   },
   {
-    id: "3",
     name: "Hanbit",
     price: 5,
     cookTime: "10-15",
@@ -35,7 +32,6 @@ export const sample_verse: any[] = [
     tags: ["FastFood", "Hamburger"],
   },
   {
-    id: "4",
     name: "Hansam",
     price: 2,
     cookTime: "15-20",
@@ -46,7 +42,6 @@ export const sample_verse: any[] = [
     tags: ["FastFood", "Fry"],
   },
   {
-    id: "5",
     name: "JangGeungYong",
     price: 11,
     cookTime: "40-50",
@@ -57,7 +52,6 @@ export const sample_verse: any[] = [
     tags: ["SlowFood", "Soup"],
   },
   {
-    id: "6",
     name: "Hansam",
     price: 9,
     cookTime: "40-50",

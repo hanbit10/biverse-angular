@@ -1,9 +1,9 @@
 <app-not-found
-  [visible]="!verse.id"
+  [visible]="!verse"
   notFoundMessage="Verse Not Found"
   resetLinkText="Back To Homepage"
 ></app-not-found>
-<div *ngIf="verse.id" class="container">
+<div *ngIf="verse" class="container">
   <img [src]="verse.imageUrl" [alt]="verse.name" />
 
   <div class="details">
