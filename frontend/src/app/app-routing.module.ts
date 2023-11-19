@@ -6,6 +6,7 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
+import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   //searchTerm is the parameter
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'login-page', component: LoginPageComponent },
   { path: 'register-page', component: RegisterPageComponent },
   { path: 'checkout-page', component: CheckoutPageComponent },
+  { path: 'payment-page', component: PaymentPageComponent },
 ];
 
 @NgModule({
