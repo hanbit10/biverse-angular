@@ -7,6 +7,7 @@ import { sample_tags, sample_users, sample_verse } from "./data";
 import jwt from "jsonwebtoken";
 import verseRouter from "./routers/verse.router";
 import userRouter from "./routers/user.router";
+import orderRouter from "./routers/order.router";
 
 import { dbConnect } from "../configs/database.config";
 dbConnect();
@@ -27,6 +28,7 @@ app.use(
 //Instead of writing all the apis in a file organize it in the order routers
 app.use("/api/verses", verseRouter);
 app.use("/api/users", userRouter);
+app.use("/api/order", orderRouter);
 
 //Set the localhost port to 5000
 const port = 5000;
