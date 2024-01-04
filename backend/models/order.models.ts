@@ -1,5 +1,5 @@
 import { model, Schema, Types } from "mongoose";
-import { Verse, VerseSchema } from "../models/verse.model";
+import { Verse, VerseSchema } from "./verse.model";
 import { OrderStatus } from "../constants/order_status";
 
 export interface LatLng {
@@ -61,3 +61,5 @@ const OrderSchema = new Schema<Order>(
 );
 
 export const OrderModel = model("order", OrderSchema);
+
+

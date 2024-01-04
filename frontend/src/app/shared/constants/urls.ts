@@ -1,8 +1,7 @@
-// import { environment } from "src/environments/environment";
+import { environment } from 'src/environments/environment';
 
-//const BASE_URL = environment.production? '' : 'http://localhost:5000';
+const BASE_URL = environment.production ? '' : 'http://localhost:5000';
 
-const BASE_URL = 'http://localhost:5000';
 export const VERSES_URL = BASE_URL + '/api/verses';
 export const VERSES_TAGS_URL = VERSES_URL + '/tags';
 export const VERSES_BY_SEARCH_URL = VERSES_URL + '/search/';
