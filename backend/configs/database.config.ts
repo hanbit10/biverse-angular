@@ -2,7 +2,7 @@ import { connect, ConnectOptions } from "mongoose";
 
 export const dbConnect = () => {
   connect(
-    "mongodb+srv://hanbit10:love0324@boilerplate.wdej0qi.mongodb.net/biverse",
+    "mongodb+srv://hanbit10:9kEWPkRGNDRAa2Wq@boilerplate.wdej0qi.mongodb.net/biverse?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
