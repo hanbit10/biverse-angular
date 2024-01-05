@@ -18,18 +18,28 @@ const app = express();
 
 app.use(express.json());
 
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: [
+//       "http://localhost:4200",
+//       "https://biverse.onrender.com",
+//       "https://biverse.onrender.com",
+//     ],
+//   }),
+//   express.json()
+// );
 app.use(
   cors({
     credentials: true,
     origin: [
-      "http://localhost:4200",
+      "*",
       "https://biverse.onrender.com",
       "https://biverse.onrender.com",
     ],
   }),
   express.json()
 );
-
 //Instead of writing all the apis in a file organize it in the order routers
 app.use("/api/verses", verseRouter);
 app.use("/api/users", userRouter);
