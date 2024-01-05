@@ -37,7 +37,7 @@ app.get("*", (req, res) => {
 });
 
 //Set the localhost port to 5000
-const port = 5000;
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log("Website served on http://localhost:" + port);
 });
