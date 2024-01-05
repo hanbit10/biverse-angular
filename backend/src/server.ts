@@ -32,7 +32,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ["https://biverse.onrender.com"],
+    origin: ["https://biverse.onrender.com", "http://localhost:5000"],
   }),
   express.json()
 );
