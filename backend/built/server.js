@@ -1,9 +1,7 @@
 "use strict";
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule ? mod : { default: mod };
-  };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 exports.__esModule = true;
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1["default"].config();
@@ -29,24 +27,24 @@ app.use(express_1["default"].json());
 //   }),
 //   express.json()
 // );
-app.use(
-  (0, cors_1["default"])({
-    origin: ["*", "https://biverse.onrender.com"],
+app.use((0, cors_1["default"])({
     credentials: true,
-    optionSuccessStatus: 200,
-  }),
-  express_1["default"].json()
-);
+    origin: [
+        "*",
+        "https://biverse.onrender.com",
+        "https://biverse.onrender.com",
+    ]
+}), express_1["default"].json());
 //Instead of writing all the apis in a file organize it in the order routers
 app.use("/api/verses", verse_router_1["default"]);
 app.use("/api/users", user_router_1["default"]);
 app.use("/api/order", order_router_1["default"]);
 app.use(express_1["default"].static("public"));
 app.get("*", function (req, res) {
-  res.sendFile(path_1["default"].join(__dirname, "public", "index.html"));
+    res.sendFile(path_1["default"].join(__dirname, "public", "index.html"));
 });
 //Set the localhost port to 5000
 var port = process.env.PORT || 5000;
 app.listen(port, function () {
-  console.log("Website served on http://localhost:" + port);
+    console.log("Website served on http://localhost:" + port);
 });
