@@ -2,7 +2,7 @@ import { Router } from "express";
 import { sample_tags, sample_verse } from "../data";
 import asyncHandler from "express-async-handler";
 import { sample_users } from "../data";
-import { VerseModel } from "../../models/verse.model";
+import { VerseModel } from "../models/verse.model";
 const router = Router();
 
 router.get(

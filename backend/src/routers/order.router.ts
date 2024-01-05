@@ -1,9 +1,9 @@
 import { Router } from "express";
 import asyncHandler from "express-async-handler";
-import { HTTP_BAD_REQUEST } from "../../constants/http_status";
-import { OrderModel } from "../../models/order.models";
-import { OrderStatus } from "../../constants/order_status";
-import auth from "../../middlewares/auth.mid";
+import { HTTP_BAD_REQUEST } from "../constants/http_status";
+import { OrderModel } from "../models/order.models";
+import { OrderStatus } from "../constants/order_status";
+import auth from "../middlewares/auth.mid";
 
 const router = Router();
 router.use(auth);

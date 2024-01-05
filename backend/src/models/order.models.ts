@@ -61,5 +61,3 @@ const OrderSchema = new Schema<Order>(
 );
 
 export const OrderModel = model("order", OrderSchema);
-
-
