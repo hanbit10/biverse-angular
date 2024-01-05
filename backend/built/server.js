@@ -19,32 +19,16 @@ var app = (0, express_1["default"])();
 //Cors the local host of front end
 app.use(express_1["default"].json());
 app.use(
-  (0, cors_1["default"])({
+  cors_1["default"]({
     credentials: true,
-    origin: ["http://localhost:4200"],
+    origin: [
+      "http://localhost:4200",
+      "https://biverse.onrender.com",
+      "https://biverse.onrender.com",
+    ],
   }),
   express_1["default"].json()
 );
-
-app.use(function (req, res, next) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  const allowedOrigins = [
-    "http://localhost:5000",
-    "https://biverse.onrender.com/",
-    "https://biverse.onrender.com/",
-  ];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.header("Access-Control-Allow-credentials", true);
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
-  next();
-});
 
 //Instead of writing all the apis in a file organize it in the order routers
 app.use("/api/verses", verse_router_1["default"]);
