@@ -10,7 +10,7 @@ import verseRouter from "./routers/verse.router";
 import userRouter from "./routers/user.router";
 import orderRouter from "./routers/order.router";
 
-import { dbConnect } from "../configs/database.config";
+import { dbConnect } from "./configs/database.config";
 dbConnect();
 
 const app = express();
