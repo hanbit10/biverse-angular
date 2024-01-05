@@ -25,19 +25,6 @@ app.use(
   }),
   express_1["default"].json()
 );
-//Instead of writing all the apis in a file organize it in the order routers
-app.use("/api/verses", verse_router_1["default"]);
-app.use("/api/users", user_router_1["default"]);
-app.use("/api/order", order_router_1["default"]);
-app.use(express_1["default"].static("public"));
-app.get("*", function (req, res) {
-  res.sendFile(path_1["default"].join(__dirname, "public", "index.html"));
-});
-//Set the localhost port to 5000
-var port = process.env.PORT || 5000;
-app.listen(port, function () {
-  console.log("Website served on http://localhost:" + port);
-});
 
 app.use(function (req, res, next) {
   // res.header("Access-Control-Allow-Origin", "*");
@@ -57,4 +44,18 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-credentials", true);
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
   next();
+});
+
+//Instead of writing all the apis in a file organize it in the order routers
+app.use("/api/verses", verse_router_1["default"]);
+app.use("/api/users", user_router_1["default"]);
+app.use("/api/order", order_router_1["default"]);
+app.use(express_1["default"].static("public"));
+app.get("*", function (req, res) {
+  res.sendFile(path_1["default"].join(__dirname, "public", "index.html"));
+});
+//Set the localhost port to 5000
+var port = process.env.PORT || 5000;
+app.listen(port, function () {
+  console.log("Website served on http://localhost:" + port);
 });
