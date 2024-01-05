@@ -32,6 +32,7 @@ app.use("/api/users", userRouter);
 app.use("/api/order", orderRouter);
 
 app.use(express.static("public"));
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
