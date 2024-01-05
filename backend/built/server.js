@@ -1,9 +1,7 @@
 "use strict";
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule ? mod : { default: mod };
-  };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 exports.__esModule = true;
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1["default"].config();
@@ -18,41 +16,30 @@ var database_config_1 = require("./configs/database.config");
 var app = (0, express_1["default"])();
 //Cors the local host of front end
 app.use(express_1["default"].json());
-app.use(
-  (0, cors_1["default"])({
+app.use((0, cors_1["default"])({
     credentials: true,
-    origin: ["http://localhost:4200"],
-  }),
-  express_1["default"].json()
-);
+    origin: ["http://localhost:4200"]
+}), express_1["default"].json());
 //Instead of writing all the apis in a file organize it in the order routers
 app.use("/api/verses", verse_router_1["default"]);
 app.use("/api/users", user_router_1["default"]);
 app.use("/api/order", order_router_1["default"]);
 app.use(express_1["default"].static("public"));
 app.get("*", function (req, res) {
-  res.sendFile(path_1["default"].join(__dirname, "public", "index.html"));
+    res.sendFile(path_1["default"].join(__dirname, "public", "index.html"));
 });
 //Set the localhost port to 5000
 var port = process.env.PORT;
 app.listen(port, function () {
-  console.log("Website served on http://localhost:" + port);
+    console.log("Website served on http://localhost:" + port);
 });
-
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://biverse.onrender.com/");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,CONNECT,TRACE"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Authorization, X-Content-Type-Options, Accept, X-Requested-With, Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
-  );
-  res.setHeader("Access-Control-Allow-Credentials", true);
-  res.setHeader("Access-Control-Allow-Private-Network", true);
-  //  Firefox caps this at 24 hours (86400 seconds). Chromium (starting in v76) caps at 2 hours (7200 seconds). The default value is 5 seconds.
-  res.setHeader("Access-Control-Max-Age", 7200);
-
-  next();
+app.use(function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "https://your-frontend.com");
+    res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,CONNECT,TRACE");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Content-Type-Options, Accept, X-Requested-With, Origin, Access-Control-Request-Method, Access-Control-Request-Headers");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Allow-Private-Network", "true");
+    //  Firefox caps this at 24 hours (86400 seconds). Chromium (starting in v76) caps at 2 hours (7200 seconds). The default value is 5 seconds.
+    res.setHeader("Access-Control-Max-Age", 7200);
+    next();
 });
