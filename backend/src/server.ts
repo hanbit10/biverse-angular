@@ -32,11 +32,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: [
-      "*",
-      "https://biverse.onrender.com",
-      "https://biverse.onrender.com",
-    ],
+    origin: ["https://biverse.onrender.com"],
   }),
   express.json()
 );
