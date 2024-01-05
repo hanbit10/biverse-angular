@@ -29,11 +29,7 @@ app.use(express_1["default"].json());
 // );
 app.use((0, cors_1["default"])({
     credentials: true,
-    origin: [
-        "*",
-        "https://biverse.onrender.com",
-        "https://biverse.onrender.com",
-    ]
+    origin: ["https://biverse.onrender.com"]
 }), express_1["default"].json());
 //Instead of writing all the apis in a file organize it in the order routers
 app.use("/api/verses", verse_router_1["default"]);
