@@ -22,7 +22,7 @@ app.use(
   cors_1["default"]({
     credentials: true,
     origin: [
-      "http://localhost:4200",
+      "*",
       "https://biverse.onrender.com",
       "https://biverse.onrender.com",
     ],
