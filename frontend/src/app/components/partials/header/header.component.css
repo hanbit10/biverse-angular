@@ -29,13 +29,16 @@ ul {
 }
 
 ul a {
+  /* background-color: blueviolet; */
   padding: 1rem;
   display: inline-block;
+  height: 100%;
 }
 
 ul button {
   padding: 1rem;
   display: inline-block;
+  height: 100%;
 }
 
 a span {
@@ -47,6 +50,7 @@ a span {
 }
 
 button {
+  /* background-color: blue; */
   padding: 1rem;
   font-size: 1rem;
 }
