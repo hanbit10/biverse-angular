@@ -30,6 +30,7 @@ li a img {
 }
 
 .content {
+  /* background-color: rgb(205, 135, 135); */
   margin-top: 0.3rem;
   padding: 0.5rem 1rem;
   position: relative;
@@ -37,15 +38,11 @@ li a img {
 }
 
 .favorite {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 1.2rem;
+  color: warm;
 }
 
-/* .favorite.not {
-  color: grey; 
-} */
+.favorite.not {
+}
 
 .stars {
   margin-bottom: 0.2rem;
@@ -87,4 +84,12 @@ li a img {
   /* color: #414141; */
   margin-top: 0.7rem;
   font-size: 1.1rem;
+}
+
+button {
+  /* background-color: blue; */
+}
+
+.name {
+  /* background-color: blueviolet; */
 }

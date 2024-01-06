@@ -31,6 +31,7 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { MatButtonModule } from '@angular/material/button';
       newestOnTop: false,
     }),
     MatButtonModule,
+    MatIconModule,
   ],
   providers: [
     {
