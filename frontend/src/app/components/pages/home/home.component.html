@@ -7,7 +7,7 @@
 </app-not-found>
 <ul>
   <li *ngFor="let verse of verses">
-    <a routerLink="/verse/{{ verse.id }}">
+    <mat-card routerLink="/verse/{{ verse.id }}">
       <img [src]="verse.imageUrl" [alt]="verse.name" />
       <div class="content">
         <div class="name">
@@ -37,6 +37,6 @@
           </div>
         </div>
       </div>
-    </a>
+    </mat-card>
   </li>
 </ul>

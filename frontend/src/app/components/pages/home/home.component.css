@@ -7,7 +7,7 @@ ul {
   padding: 0;
 }
 
-li a {
+li mat-card {
   height: 22.5rem;
   width: 20rem;
   /* border: 1px solid whitesmoke; */
@@ -17,14 +17,15 @@ li a {
   flex-direction: column;
   overflow: hidden;
   /* color: #e72929; */
+  background-color: var(--color-bg);
 }
 
-li a:hover {
+li mat-card:hover {
   opacity: 0.9;
   cursor: pointer;
 }
 
-li a img {
+li mat-card img {
   object-fit: cover;
   height: 14.5rem;
 }

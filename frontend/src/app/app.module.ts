@@ -32,6 +32,7 @@ import { PaypalButtonComponent } from './components/partials/paypal-button/paypa
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatCardModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
