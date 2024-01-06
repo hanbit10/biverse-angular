@@ -30,6 +30,8 @@ import { AuthInterceptor } from './auth.interceptor';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +66,7 @@ import { PaypalButtonComponent } from './components/partials/paypal-button/paypa
       positionClass: 'toast-bottom-right',
       newestOnTop: false,
     }),
+    MatButtonModule,
   ],
   providers: [
     {
