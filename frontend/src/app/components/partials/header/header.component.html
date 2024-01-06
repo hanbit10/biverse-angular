@@ -7,7 +7,10 @@
           <a routerLink="/upload">Upload</a>
         </li> -->
         <li *ngIf="!isAuth">
-          <a routerLink="/login-page">Login</a>
+          <button mat-button color="white" routerLink="/login-page">
+            Login
+          </button>
+          <!-- <button mat-button color="white">Hello This is Angular</button> -->
         </li>
         <li *ngIf="isAuth" class="menu-container">
           <a routerLink="/dashboard">{{ user.name }}</a>
@@ -18,11 +21,11 @@
           </div>
         </li>
         <li>
-          <a routerLink="/cart-page">
+          <button mat-button color="white" routerLink="/cart-page">
             <!-- Cart <span>{{ cartQuantity }}</span>  
             use ngIf so that it only shows if the quantitiy is added-->
             Cart <span *ngIf="cartQuantity">{{ cartQuantity }}</span>
-          </a>
+          </button>
         </li>
       </ul>
     </nav>
