@@ -7,7 +7,7 @@ ul {
   padding: 0;
 }
 
-li a {
+li mat-card {
   height: 22.5rem;
   width: 20rem;
   /* border: 1px solid whitesmoke; */
@@ -17,19 +17,21 @@ li a {
   flex-direction: column;
   overflow: hidden;
   /* color: #e72929; */
+  background-color: var(--color-bg);
 }
 
-li a:hover {
+li mat-card:hover {
   opacity: 0.9;
   cursor: pointer;
 }
 
-li a img {
+li mat-card img {
   object-fit: cover;
   height: 14.5rem;
 }
 
 .content {
+  /* background-color: rgb(205, 135, 135); */
   margin-top: 0.3rem;
   padding: 0.5rem 1rem;
   position: relative;
@@ -37,15 +39,11 @@ li a img {
 }
 
 .favorite {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 1.2rem;
+  color: warm;
 }
 
-/* .favorite.not {
-  color: grey; 
-} */
+.favorite.not {
+}
 
 .stars {
   margin-bottom: 0.2rem;
@@ -87,4 +85,12 @@ li a img {
   /* color: #414141; */
   margin-top: 0.7rem;
   font-size: 1.1rem;
+}
+
+button {
+  /* background-color: blue; */
+}
+
+.name {
+  /* background-color: blueviolet; */
 }

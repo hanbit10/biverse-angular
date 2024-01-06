@@ -7,43 +7,36 @@
 </app-not-found>
 <ul>
   <li *ngFor="let verse of verses">
-    <a routerLink="/verse/{{ verse.id }}">
+    <mat-card routerLink="/verse/{{ verse.id }}">
       <img [src]="verse.imageUrl" [alt]="verse.name" />
       <div class="content">
         <div class="name">
           {{ verse.name }}
         </div>
-        <span class="favorite {{ verse.favorite ? '' : 'not' }}"> ❤ </span>
-        <div class="stars">
-          <!-- <star-rating
-            [value]="verse.stars"
-            [totalstars]="5"
-            checkedcolor="red"
-            uncheckedcolor="black"
-            size="22px"
-            [readonly]="true"
-          > -->
-          <!-- </star-rating> -->
-        </div>
+        <!-- <span class="favorite {{ verse.favorite ? '' : 'not' }}"> ❤ </span>
+        <button
+          mat-icon-button
+          class="mat-icon-button {{ verse.favorite ? '' : 'not' }}"
+          aria-label="Example icon button with a heart icon"
+        >
+          <mat-icon>favorite</mat-icon>
+        </button> -->
+
+        <button
+          mat-mini-fab
+          color="white"
+          aria-label="Example icon button with a heart icon"
+        >
+          <mat-icon>save_alt</mat-icon>
+        </button>
         <div class="product-item-footer">
           <div class="origins">
             <span *ngFor="let origin of verse.origins">
               {{ origin }}
             </span>
           </div>
-
-          <div class="cook-time">
-            <span>🕒</span>
-            {{ verse.cookTime }}
-          </div>
-        </div>
-
-        <div class="price">
-          <span>
-            {{ verse.price | currency }}
-          </span>
         </div>
       </div>
-    </a>
+    </mat-card>
   </li>
 </ul>
