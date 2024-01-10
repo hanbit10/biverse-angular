@@ -9,6 +9,17 @@
         type="email"
         label="Email"
       ></text-input>
+
+      <text-input
+        [control]="fc['password']"
+        [showErrorsWhen]="isSubmitted"
+        type="password"
+        label="Password"
+      ></text-input>
+
+      <!-- <mat-form-field class="example-full-width">
+        <input type="email" matInput [control]="fc['email']"></input>
+      </mat-form-field> -->
       <!-- <input
         type="email"
         label="Email"
@@ -19,13 +30,6 @@
         <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
         <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
       </div> -->
-
-      <text-input
-        [control]="fc['password']"
-        [showErrorsWhen]="isSubmitted"
-        type="password"
-        label="Password"
-      ></text-input>
 
       <!-- <div class="button">
         <button type="submit">Login</button>

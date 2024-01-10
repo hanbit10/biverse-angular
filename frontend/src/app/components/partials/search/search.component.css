@@ -30,7 +30,7 @@ div button {
   outline: none;
 }
 
-div button:hover {
+/* div button:hover {
   opacity: 1;
   cursor: pointer;
-}
+} */
