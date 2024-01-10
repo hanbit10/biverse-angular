@@ -6,11 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./input-container.component.css'],
 })
 export class InputContainerComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
   @Input()
   label!: string;
   @Input()
   bgColor = 'white';
+
+  constructor() {}
+
+  ngOnInit(): void {}
 }
