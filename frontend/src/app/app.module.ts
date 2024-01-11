@@ -29,12 +29,13 @@ import { OrderItemListComponent } from './components/partials/order-item-list/or
 import { AuthInterceptor } from './auth.interceptor';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
+import { FooterComponent } from './components/partials/footer/footer.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { FooterComponent } from './components/partials/footer/footer.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { FooterComponent } from './components/partials/footer/footer.component';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [
     {
